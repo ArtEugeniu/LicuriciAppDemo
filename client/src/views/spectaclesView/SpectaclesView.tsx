@@ -1,4 +1,4 @@
-import './Spectaclesview.scss';
+import './SpectaclesView.scss';
 import { useEffect, useState } from 'react';
 import SpectaclesViewModal from './SpectacleViewModal';
 import SpectaclesViewAddModal from './SpectaclesViewAddModal';
