@@ -3,7 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - master  # или main, если твоя основная ветка main
+      - master  
+
+permissions:
+  contents: write  
 
 jobs:
   build-and-deploy:
