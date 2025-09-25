@@ -78,7 +78,7 @@ const ScheduleViewModal: React.FC<ScheduleViewModalProps> = ({ selectedSpectacle
 
       setShowModal(false);
     } catch (error) {
-      alert('Eroare la vanzare: ' + error)
+      return
     }
   }
 
