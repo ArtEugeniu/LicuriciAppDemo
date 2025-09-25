@@ -45,7 +45,7 @@ const TicketsReport: React.FC = () => {
     if (!startDate || !endDate) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/api/ticketsReport?startDate=${startDate}&endDate=${endDate}`);
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/ticketsReport?startDate=${startDate}&endDate=${endDate}`);
 
       const data = await res.json();
 

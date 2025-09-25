@@ -33,7 +33,7 @@ const TicketsView: React.FC = () => {
 
   const fetchTicketsIn = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/tickets_in');
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/tickets_in`);
       const data = await response.json();
       setTicketInList(data);
     } catch (error) {
@@ -57,7 +57,7 @@ const TicketsView: React.FC = () => {
 
     try {
 
-      const response = await fetch('http://localhost:5000/api/tickets_in', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/tickets_in`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ firstSerial, lastSerial, ticketsNumber })
@@ -69,7 +69,7 @@ const TicketsView: React.FC = () => {
         return alert(`Eroare: ${data.error}`);
       }
 
-      const serialResp = await fetch('http://localhost:5000/api/ticket_serial', {
+      const serialResp = await fetch(`${import.meta.env.VITE_API_URL}/ticket_serial`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
       });

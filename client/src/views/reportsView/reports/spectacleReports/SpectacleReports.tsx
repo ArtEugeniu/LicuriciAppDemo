@@ -33,7 +33,7 @@ const SpectacleReports: React.FC<SpectacleReportsProps> = ({ sales }) => {
   useEffect(() => {
     const getSpectacleDate = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/schedule', {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/schedule`, {
           method: 'GET'
         });
 
@@ -68,7 +68,7 @@ const SpectacleReports: React.FC<SpectacleReportsProps> = ({ sales }) => {
   useEffect(() => {
     const fetchSpectaclesList = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/spectacles', {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/spectacles`, {
           method: 'GET'
         })
 

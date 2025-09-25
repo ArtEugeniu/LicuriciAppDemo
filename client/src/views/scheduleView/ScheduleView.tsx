@@ -38,7 +38,7 @@ const ScheduleView: React.FC = () => {
 
   const scheduleList = async () => {
 
-    const response = await fetch('http://localhost:5000/api/schedule', {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/schedule`, {
       method: 'GET',
     });
 
@@ -84,7 +84,7 @@ const ScheduleView: React.FC = () => {
 
 
     try {
-      const response = await fetch(`http://localhost:5000/api/schedule/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/schedule/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ title, type })
@@ -105,7 +105,7 @@ const ScheduleView: React.FC = () => {
   const removeSpectacle = async (id: string) => {
     
     try {
-      const salesResponse = await fetch('http://localhost:5000/api/sales');
+      const salesResponse = await fetch(`${import.meta.env.VITE_API_URL}/sales`);
       if (!salesResponse.ok) {
         alert('Eroare la verificarea vanzarilor');
         return;
@@ -123,7 +123,7 @@ const ScheduleView: React.FC = () => {
       const confirmed = window.confirm('Sunteti sigur ca doriti sa stergeti acest spectacol?');
       if (!confirmed) return;
 
-      const response = await fetch(`http://localhost:5000/api/schedule/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/schedule/${id}`, {
         method: 'DELETE'
       })
 

@@ -36,7 +36,7 @@ const ScheduleViewModal: React.FC<ScheduleViewModalProps> = ({ selectedSpectacle
     const randomId = uuid();
 
     try {
-      const response = await fetch('http://localhost:5000/api/sales', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/sales`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

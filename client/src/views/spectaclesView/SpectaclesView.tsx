@@ -35,7 +35,7 @@ const SpectaclesView: React.FC = () => {
   useEffect(() => {
     const fetchSpectacles = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/spectacles');
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/spectacles`);
         const data = await response.json();
         setSpectacles(data)
       } catch (error) {
@@ -55,7 +55,7 @@ const SpectaclesView: React.FC = () => {
 
   const handleAddSpectacle = async (title: string, type: string) => {
     const randomId = uuid();
-    const response = await fetch('http://localhost:5000/api/spectacles', {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/spectacles`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -74,7 +74,7 @@ const SpectaclesView: React.FC = () => {
     const confirmed = window.confirm('Sunteti sigur ca doriti sa stergeti acest spectacol?');
     if (!confirmed) return;
 
-    const response = await fetch(`http://localhost:5000/api/spectacles/${id}`, {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/spectacles/${id}`, {
       method: 'DELETE'
     });
 
@@ -107,7 +107,7 @@ const SpectaclesView: React.FC = () => {
     }
 
     try {
-     const response = await fetch('http://localhost:5000/api/schedule', {
+     const response = await fetch(`${import.meta.env.VITE_API_URL}/schedule`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

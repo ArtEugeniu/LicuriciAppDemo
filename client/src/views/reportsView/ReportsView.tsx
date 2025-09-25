@@ -23,7 +23,7 @@ const ReportsView: React.FC = () => {
 
   useEffect(() => {
     const fetchSales = async () => {
-      const response = await fetch('http://localhost:5000/api/sales', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/sales`, {
         method: 'GET'
       });
 

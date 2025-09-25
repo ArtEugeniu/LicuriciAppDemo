@@ -34,7 +34,7 @@ const ScheduleViewEditModal: React.FC<ScheduleViewEditModalProps> = ({ selectedS
 
   useEffect(() => {
     const fetchSpectaclesList = async () => {
-      const response = await fetch('http://localhost:5000/api/spectacles', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/spectacles`, {
         method: 'GET'
       });
 
