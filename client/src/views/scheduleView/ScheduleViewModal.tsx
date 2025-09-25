@@ -69,7 +69,7 @@ const ScheduleViewModal: React.FC<ScheduleViewModalProps> = ({ selectedSpectacle
       });
 
       if (!printResponse.ok) {
-        const errorData = await printResponse.json();
+        return
         // alert('Eroare la tipărirea biletelor: ' + errorData.error);
       } else {
         alert(`Succes la vanzarea a ${ticketNumber} ${ticketNumber === 1 ? 'bilet' : 'bilete'}: 
