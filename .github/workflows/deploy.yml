@@ -27,6 +27,8 @@ jobs:
       - name: Build
         run: npm run build
         working-directory: ./client
+        env:
+          VITE_API_URL: https://licuriciappdemo.onrender.com/api
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
