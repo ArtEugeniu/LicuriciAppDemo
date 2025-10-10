@@ -19,7 +19,7 @@ async function startServer() {
   app.use("/api/spectacles", routerSpectacles);
   app.use("/api/schedule", routerSchedule);
   app.use("/api/sales", routerSales);
-  app.use("/api/print", routerPrint);
+  // app.use("/api/print", routerPrint);
   app.use("/api/tickets_in", routerTicketsIn);
   app.use("/api/ticket_serial", routerTicketSerial);
   app.use("/api/ticketsReport", routerTicketsReport);
