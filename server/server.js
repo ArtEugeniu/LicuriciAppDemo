@@ -4,7 +4,7 @@ import { initDB } from "./db/index.js";
 import { routerSpectacles } from "./routes/spectacles.js";
 import { routerSchedule } from "./routes/schedule.js";
 import { routerSales } from "./routes/sales.js";
-import { routerPrint } from "./routes/print.js";
+// import { routerPrint } from "./routes/print.js";
 import { routerTicketsIn } from "./routes/tickets_in.js";
 import { routerTicketSerial } from "./routes/ticket_serial.js";
 import { routerTicketsReport } from "./routes/ticketsReport.js";
